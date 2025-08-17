@@ -3,14 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snowtex Opex</title>
+  <title>4H Admin</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#004080">
 </head>
 <body>
   <script>
-    // Redirect immediately to Looker Studio link
+    // Redirect to your Looker Studio report
     window.location.href = "https://lookerstudio.google.com/reporting/734c5b18-2449-4045-bc99-685c036a2f5d";
+  </script>
+
+  <script>
+    // Register service worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker Registered"));
+    }
   </script>
 </body>
 </html>
