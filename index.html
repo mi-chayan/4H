@@ -10,36 +10,26 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       width: 100%;
-      overflow: hidden; /* hide default scrollbars */
+      height: 100%;
+      overflow: hidden;
       background: #ffffff;
     }
 
-    #iframeContainer {
+    iframe {
+      border: none;
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      overflow-y: scroll; /* vertical scroll inside container */
-      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-    }
-
-    iframe {
-      border: none;
-      width: 100%;
-      min-height: 100%; /* iframe at least full height */
-      display: block;
     }
   </style>
 </head>
 <body>
-  <div id="iframeContainer">
-    <iframe 
-      src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF?rm=minimal" 
-      allowfullscreen>
-    </iframe>
-  </div>
+  <iframe 
+    src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF?rm=minimal" 
+    allowfullscreen>
+  </iframe>
 </body>
 </html>
