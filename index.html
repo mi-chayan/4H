@@ -2,46 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>4H Admin</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#004080">
+  <title>IE SUM</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
       height: 100%;
-      overflow: hidden;
-      background: #ffffff;
     }
     iframe {
       border: none;
-      position: fixed;
-      top: 0;
-      left: 0;
+      display: block;
       width: 100vw;
+      height: 100vh;
     }
   </style>
 </head>
 <body>
   <iframe 
-    src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF?rm=minimal" 
+    src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF" 
     allowfullscreen>
   </iframe>
-
-  <script>
-    function resizeIframe() {
-      const iframe = document.querySelector("iframe");
-      iframe.style.height = window.innerHeight + "px";
-    }
-
-    // Initial resize
-    resizeIframe();
-
-    // Adjust on window resize or orientation change
-    window.addEventListener("resize", resizeIframe);
-    window.addEventListener("orientationchange", resizeIframe);
-  </script>
 </body>
 </html>
