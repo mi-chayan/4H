@@ -4,22 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>4H Admin</title>
+
+  <!-- PWA Manifest -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#004080">
 </head>
 <body>
   <script>
-    // Redirect to your Looker Studio report
-    window.location.href = "https://lookerstudio.google.com/embed/reporting/734c5b18-2449-4045-bc99-685c036a2f5d/page/page_12345";
+    // Redirect to Looker Studio (fullscreen, no address bar)
+    window.location.href = "https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF";
   </script>
 
   <script>
     // Register service worker
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("service-worker.js")
-        .then(() => console.log("Service Worker Registered"));
+        .then(() => console.log("Service Worker registered"))
+        .catch(err => console.log("SW fail:", err));
     }
   </script>
 </body>
 </html>
-
