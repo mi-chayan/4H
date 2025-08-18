@@ -1,3 +1,25 @@
-self.addEventListener("install", () => {
-  console.log("Service Worker installed for 4H Admin");
+const CACHE_NAME = "4h-admin-cache-v1";
+const urlsToCache = [
+  "./index.html",
+  "./manifest.json",
+  "./icon-192.png",
+  "./icon-512.png"
+];
+
+// Install SW & cache files
+self.addEventListener("install", event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(urlsToCache);
+    })
+  );
+});
+
+// Fetch from cache first
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request);
+    })
+  );
 });
