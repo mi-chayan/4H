@@ -11,36 +11,35 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
+      width: 100%;
+      overflow: hidden; /* hide default scrollbars */
       background: #ffffff;
     }
-    iframe {
-      border: none;
-      width: 100vw;
+
+    #iframeContainer {
       position: fixed;
       top: 0;
       left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow-y: scroll; /* vertical scroll inside container */
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      min-height: 100%; /* iframe at least full height */
+      display: block;
     }
   </style>
 </head>
 <body>
-  <iframe id="lookerIframe" 
-    src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF" 
-    allowfullscreen>
-  </iframe>
-
-  <script>
-    function resizeIframe() {
-      const iframe = document.getElementById('lookerIframe');
-      iframe.style.height = window.innerHeight + 'px';
-    }
-
-    // Set initial height
-    resizeIframe();
-
-    // Adjust on orientation change or resize
-    window.addEventListener('resize', resizeIframe);
-    window.addEventListener('orientationchange', resizeIframe);
-  </script>
+  <div id="iframeContainer">
+    <iframe 
+      src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF?rm=minimal" 
+      allowfullscreen>
+    </iframe>
+  </div>
 </body>
 </html>
