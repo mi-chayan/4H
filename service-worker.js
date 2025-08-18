@@ -1,12 +1,12 @@
 const CACHE_NAME = "4h-admin-cache-v1";
 const urlsToCache = [
-  "./index.html",
-  "./manifest.json",
-  "./icon-192.png",
-  "./icon-512.png"
+  "/index.html",
+  "/manifest.json",
+  "/icon-192.png",
+  "/icon-512.png"
 ];
 
-// Install SW & cache files
+// Install Service Worker & cache files
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -15,7 +15,7 @@ self.addEventListener("install", event => {
   );
 });
 
-// Fetch from cache first
+// Serve from cache first
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(response => {
