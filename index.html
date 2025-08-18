@@ -16,19 +16,31 @@
     }
     iframe {
       border: none;
+      width: 100vw;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 105vh;
     }
   </style>
 </head>
 <body>
-  <!-- Looker Studio dashboard embed -->
-  <iframe 
+  <iframe id="lookerIframe" 
     src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF?rm=minimal" 
     allowfullscreen>
   </iframe>
+
+  <script>
+    function resizeIframe() {
+      const iframe = document.getElementById('lookerIframe');
+      iframe.style.height = window.innerHeight + 'px';
+    }
+
+    // Set initial height
+    resizeIframe();
+
+    // Adjust on orientation change or resize
+    window.addEventListener('resize', resizeIframe);
+    window.addEventListener('orientationchange', resizeIframe);
+  </script>
 </body>
 </html>
