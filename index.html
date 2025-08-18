@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>4H Admin</title>
 
-  <!-- PWA Manifest -->
+  <!-- Manifest -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#004080">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#004080"/>
 
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden;
     }
     iframe {
       border: none;
@@ -23,16 +26,14 @@
   </style>
 </head>
 <body>
-  <iframe 
-    src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF" 
-    allowfullscreen>
-  </iframe>
+  <iframe src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF" allowfullscreen></iframe>
 
   <script>
+    // Register Service Worker
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("service-worker.js")
-        .then(() => console.log("Service Worker registered"))
-        .catch(err => console.log("SW fail:", err));
+        .then(() => console.log("Service Worker Registered"))
+        .catch(err => console.log("SW Error:", err));
     }
   </script>
 </body>
