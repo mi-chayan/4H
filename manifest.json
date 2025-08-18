@@ -1,19 +1,19 @@
 {
   "name": "4H Admin",
   "short_name": "4H Admin",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#004080",
-  "description": "4H Admin Dashboard",
+  "description": "Looker Studio Dashboard for 4H Admin",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
