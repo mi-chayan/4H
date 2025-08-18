@@ -15,21 +15,33 @@
       overflow: hidden;
       background: #ffffff;
     }
-
     iframe {
       border: none;
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
-      height: 100vh;
     }
   </style>
 </head>
 <body>
   <iframe 
-    src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF" 
+    src="https://lookerstudio.google.com/embed/reporting/9ac8a284-1c31-4eb3-9ac3-8bbb25efeed8/page/NXwUF?rm=minimal" 
     allowfullscreen>
   </iframe>
+
+  <script>
+    function resizeIframe() {
+      const iframe = document.querySelector("iframe");
+      iframe.style.height = window.innerHeight + "px";
+    }
+
+    // Initial resize
+    resizeIframe();
+
+    // Adjust on window resize or orientation change
+    window.addEventListener("resize", resizeIframe);
+    window.addEventListener("orientationchange", resizeIframe);
+  </script>
 </body>
 </html>
